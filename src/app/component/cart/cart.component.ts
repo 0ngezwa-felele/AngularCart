@@ -17,9 +17,12 @@ export class CartComponent {
         this.grandTotal = this.cartService.getTotalPrice()
       })
   }
-  removeItem(item: any) {
-    this.cartService.removeCartItem(item);
+
+  removeItem(index: number) {
+    this.cartService.removeCartItem(index);
+
   }
+
   emptycart() {
     this.cartService.removeAllCart();
   }

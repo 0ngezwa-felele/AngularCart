@@ -34,15 +34,16 @@ public productlist = new BehaviorSubject<any> ([]);
     return grandTotal;
   }
 
-  removeCartItem(product : any){
-    this.cartItemList.map((a: any, index:any)=>{
-      if (product.id === a.id){
-        this.cartItemList.splice(index,1)
-      }
-      //  this.cartItemList.next(this.cartItemList)
-    })
-   
+  removeCartItem(index : number){
+    // this.cartItemList.map((a: any, index:any)=>{
+    //   if (products.id === a.id){
+    //     this.cartItemList.splice(index,1)
+    //   }
+    // })
+      this.cartItemList.splice(index, 1);
+      this.productlist.next(this.cartItemList)
   }
+  
   
 
   removeAllCart(){
