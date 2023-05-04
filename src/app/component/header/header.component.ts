@@ -11,17 +11,12 @@ export class HeaderComponent implements OnInit {
   public searchTerm !: string;
   constructor(private cartService: CartService) { }
 
-  // ngOnInit(): void {
-  //   this.cartService.getProducts().subscribe((res: any)=>{
-  //     this.totalItem =  res.length
-  //   })
-  // }
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((res: any) => {
       this.totalItem = res.length;
     });
   }
-  search(event: any){
+  search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm)
